@@ -10,9 +10,9 @@ public class Database {
     public Database() {
         this.users = users;
         this.workouts = new ArrayList<Workout>();
-        this.workouts.add(new Workout("Cycling workout #1"));
-        this.workouts.add(new Workout("Cycling workout #2"));
-        this.workouts.add(new Workout("Cycling workout #3"));
+        this.workouts.add(new Workout("Cycling Workout Profile #1"));
+        this.workouts.add(new Workout("Cycling workout Profile #2"));
+        this.workouts.add(new Workout("Cycling workout Profile #3"));
     }
 
     public List<User> getUsers(){

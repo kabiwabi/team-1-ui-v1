@@ -95,7 +95,6 @@ public class SettingsFragment extends Fragment {
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to faster";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -104,7 +103,6 @@ public class SettingsFragment extends Fragment {
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to normal";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -113,7 +111,6 @@ public class SettingsFragment extends Fragment {
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to slower";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -121,7 +118,7 @@ public class SettingsFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                ((MainActivity)getActivity()).countdown = 4000;
+                ((MainActivity)getActivity()).countdown = 6000;
             }
         });
 

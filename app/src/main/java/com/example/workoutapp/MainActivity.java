@@ -42,19 +42,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Button stop_button;
     private Button settings_button;
-    public long countdown = 4000;
+    public long countdown = 6000;
     CountDownTimer start;
     public TextView unit_measurement;
-
     private Controller controller;
-
-
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
-
     boolean timerStarted = false;
-    boolean countdownTimerStarted = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
 
         };
         timer.scheduleAtFixedRate(timerTask, countdown ,1000);
-//        pause_button.setVisibility(View.INVISIBLE);
     }
 
 
@@ -204,14 +199,6 @@ public class MainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment_content_main);
         NavController navController = navHostFragment.getNavController();
         navController.navigate(R.id.action_nav_workout_to_nav_settings);
-
-//        setContentView(R.layout.fragment_settings);
-//        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-//            @Override
-//            public void handleOnBackPressed() {
-//                setContentView(binding.getRoot());
-//            }
-//        });
     }
 
     public void startCountdown(){
@@ -227,11 +214,9 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText("" + (millisUntilFinished / 1000));
                 }
             }
-
             public void onFinish() {
                 textView.setVisibility(View.GONE);
             }
-
         }.start();
     }
 

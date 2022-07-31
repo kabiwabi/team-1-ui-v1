@@ -46,7 +46,7 @@ public class WorkoutFragment extends Fragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setCancelable(false);
-        builder.setTitle("Pick a Workout");
+        builder.setTitle("Select a workout!");
         builder.setItems(nameList, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -55,12 +55,21 @@ public class WorkoutFragment extends Fragment {
                     String workoutName = workout.getName();
                     if(!workoutName.isEmpty() && workoutName != null){
                         workoutViewModel.setWorkout(workout);
+                        if (workoutName =="Cycling Workout Profile #1") {
+                            ((MainActivity)getActivity()).countdown = 4000;
+                        }
+                        else if (workoutName =="Cycling Workout Profile #2") {
+                            ((MainActivity)getActivity()).countdown = 6000;
+                        }
+                        else if (workoutName =="Cycling Workout Profile #3") {
+                            ((MainActivity)getActivity()).countdown = 11000;
+                        }
                     }
                     else{
                         workout = null;
                         workoutViewModel.setError("Error:: Workout was in an invalid state");
                     }
-                }
+            }
                 else{
                     workoutViewModel.setError("Error:: Workout is null");
                 }
@@ -69,7 +78,6 @@ public class WorkoutFragment extends Fragment {
             }
         });
         builder.show();
-
         final TextView textView = binding.textWorkout;
         workoutViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
