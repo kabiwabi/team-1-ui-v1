@@ -30,9 +30,6 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-//Reference1:https://gist.github.com/codinginflow/58fddb4dcdb35ce7a7ff78aaa607c6ee
-//Reference2:https://github.com/codeWithCal/Timer/blob/master/app/src/main/java/codewithcal/au/timer/MainActivity.java
 public class MainActivity extends AppCompatActivity {
 
     private static final long START_TIME_IN_MILLIS = 600000;
@@ -57,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     Double time = 0.0;
 
     boolean timerStarted = false;
+    boolean countdownTimerStarted = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
     {
         button = findViewById(R.id.button_start_stop);
         textView = findViewById(R.id.text_durationCounter);
-
         stop_button = findViewById(R.id.button_pause);
 
         if(timerStarted == false)
@@ -162,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         };
-        timer.scheduleAtFixedRate(timerTask, 0 ,1000);
+        timer.scheduleAtFixedRate(timerTask, countdown ,1000);
 //        pause_button.setVisibility(View.INVISIBLE);
     }
 
@@ -184,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 
     private String getTimerText()
     {

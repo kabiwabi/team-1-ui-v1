@@ -91,7 +91,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if(id == 0){
-                    ((MainActivity)getActivity()).countdown = 3000;
+                    ((MainActivity)getActivity()).countdown = 4000;
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to faster";
                     int duration = Toast.LENGTH_SHORT;
@@ -100,7 +100,7 @@ public class SettingsFragment extends Fragment {
                     toast.show();
                 }
                 else if(id == 1){
-                    ((MainActivity)getActivity()).countdown = 4000;
+                    ((MainActivity)getActivity()).countdown = 6000;
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to normal";
                     int duration = Toast.LENGTH_SHORT;
@@ -109,7 +109,7 @@ public class SettingsFragment extends Fragment {
                     toast.show();
                 }
                 else if(id == 2){
-                    ((MainActivity)getActivity()).countdown = 5000;
+                    ((MainActivity)getActivity()).countdown = 10000;
                     Context context = getActivity().getApplicationContext();
                     CharSequence text = "countdown set to slower";
                     int duration = Toast.LENGTH_SHORT;
